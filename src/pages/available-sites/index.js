@@ -5,6 +5,7 @@ export default function Index() {
   const [sites, setSites] = useState([]);
   const route = useRouter();
   const searchSites = async () => {
+    //url here
     const response = await fetch(
       "https://knockie-sites-server.vercel.app/sites",
       {
