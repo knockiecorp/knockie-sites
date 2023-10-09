@@ -15,6 +15,7 @@ export default function Home() {
   const [sites, setSites] = useState([]);
 
   const searchSites = async () => {
+    //comment here
     const response = await fetch(
       "https://knockie-sites-server.vercel.app/sites/search",
       {
