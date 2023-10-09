@@ -15,14 +15,17 @@ export default function Home() {
   const [sites, setSites] = useState([]);
 
   const searchSites = async () => {
-    const response = await fetch("http://localhost:5000/sites/search", {
-      method: "POST",
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ search_value: `${search_key}` }),
-    });
+    const response = await fetch(
+      "https://knockie-sites-server.vercel.app/sites/search",
+      {
+        method: "POST",
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ search_value: `${search_key}` }),
+      }
+    );
     const json = await response.json();
     if (response.ok) {
       setSites(json);

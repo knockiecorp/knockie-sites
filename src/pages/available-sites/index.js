@@ -5,13 +5,16 @@ export default function Index() {
   const [sites, setSites] = useState([]);
   const route = useRouter();
   const searchSites = async () => {
-    const response = await fetch("http://localhost:5000/sites", {
-      method: "GET",
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const response = await fetch(
+      "https://knockie-sites-server.vercel.app/sites",
+      {
+        method: "GET",
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
     const json = await response.json();
     if (response.ok) {
       setSites(json);
